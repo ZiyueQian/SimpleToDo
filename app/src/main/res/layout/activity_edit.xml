@@ -24,4 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/etItem"
         android:text="Update " />
+    <Button
+        android:id="@+id/btnComplete"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etItem"
+        android:text="Complete" />
 </RelativeLayout>

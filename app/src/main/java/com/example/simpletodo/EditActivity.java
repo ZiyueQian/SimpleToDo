@@ -10,6 +10,7 @@ import android.widget.EditText;
 public class EditActivity extends AppCompatActivity {
     EditText etItem;
     Button btnSave;
+    Button btnComplete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class EditActivity extends AppCompatActivity {
 
         etItem = findViewById(R.id.etItem);
         btnSave = findViewById(R.id.btnSave);
+        btnComplete = findViewById(R.id.btnComplete);
 
         getSupportActionBar().setTitle("Edit item");
 
@@ -31,6 +33,23 @@ public class EditActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 //pass edit result
                 intent.putExtra(MainActivity.KEY_ITEM_TEXT,etItem.getText().toString());
+                intent.putExtra(MainActivity.KEY_ITEM_POSITION,getIntent().getExtras().getInt(MainActivity.KEY_ITEM_POSITION));
+
+                //set the result of the intent
+                setResult(RESULT_OK, intent);
+                //finish activity, close screen and go back
+                finish();
+            }
+        });
+
+        btnComplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //create intent that will contain results
+                Intent intent = new Intent();
+                //pass edit result
+                String completedText = "-" + etItem.getText().toString();
+                intent.putExtra(MainActivity.KEY_ITEM_TEXT,completedText);
                 intent.putExtra(MainActivity.KEY_ITEM_POSITION,getIntent().getExtras().getInt(MainActivity.KEY_ITEM_POSITION));
 
                 //set the result of the intent

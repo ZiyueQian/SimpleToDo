@@ -1,6 +1,7 @@
 package com.example.simpletodo;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_ITEM_TEXT = "item text";
     public static final String KEY_ITEM_POSITION = "item position";
     public static final int EDIT_TEXT_CODE = 20;
+    public static final int COMPLETE_TEXT_CODE = 20;
     List<String> items; //option enter shortcut for import
     Button btnAdd;
     EditText etItem;

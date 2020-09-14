@@ -1,5 +1,6 @@
 package com.example.simpletodo;
 
+import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
@@ -68,6 +69,11 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder>{
         public void bind(String item) {
             //update the view inside the view holder with this data
             tvItem.setText(item);
+
+            if (item.charAt(0) == '-') {
+                tvItem.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            }
+
             tvItem.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
